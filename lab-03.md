@@ -120,7 +120,22 @@ with the Buzzfeed article’s claim.
 
 ### Exercise 4
 
-…
+``` r
+nobel_living_science <- nobel_living_science %>% 
+  mutate(
+    born_country_us = if_else(born_country == "USA", "USA", "Other")
+  )
+nobel_living_science %>% 
+  count(born_country_us)
+```
+
+    ## # A tibble: 2 × 2
+    ##   born_country_us     n
+    ##   <chr>           <int>
+    ## 1 Other             123
+    ## 2 USA               105
+
+105 winners were born in the US, and 123 were born elsewhere.
 
 ### Exercise 5
 
