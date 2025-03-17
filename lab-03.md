@@ -1,7 +1,7 @@
 Lab 03 - Nobel laureates
 ================
-Insert your name here
-Insert date here
+Noah Booker
+03/17/25
 
 ### Load packages and data
 
