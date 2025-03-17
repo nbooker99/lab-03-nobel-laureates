@@ -71,7 +71,12 @@ nobel_living_science %>%
 105 winners were born in the US, and 123 were born elsewhere.
 
 ### Exercise 5
-
+```{r barplot2}
+ggplot(nobel_living_science, aes(x = country_us, fill = born_country_us)) +
+  geom_bar() +
+  facet_wrap(~ category) +
+  coord_flip()
+```
 ...
 
 ### Exercise 6

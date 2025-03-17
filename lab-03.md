@@ -139,7 +139,14 @@ nobel_living_science %>%
 
 ### Exercise 5
 
-…
+``` r
+ggplot(nobel_living_science, aes(x = country_us, fill = born_country_us)) +
+  geom_bar() +
+  facet_wrap(~ category) +
+  coord_flip()
+```
+
+![](lab-03_files/figure-gfm/barplot2-1.png)<!-- --> …
 
 ### Exercise 6
 
