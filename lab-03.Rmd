@@ -77,8 +77,16 @@ ggplot(nobel_living_science, aes(x = country_us, fill = born_country_us)) +
   facet_wrap(~ category) +
   coord_flip()
 ```
-...
+
+Based on this barplot, Buzzfeed's claim that "But of those US-based Nobel laureates, many were born in other countries," appears to be true. The barplot shows that, for each category, for living laureates based in the US at the time of their prize, there is a proportion who were born in countries other than the US.
 
 ### Exercise 6
-
-...
+```{r foreignborncountrycount}
+nobel_living_science %>%
+  filter(
+    country == "USA", 
+    born_country != "USA") %>% 
+  count(born_country) %>% 
+  arrange(desc(n))
+```
+For living Nobel laureates in Physics, Medicine, Chemistry, and Economics who were based in the US when they won their prize but were born in a country other than the US, the highest number were from Germany and the United Kingdom (tied for first place, each with 7 laureates).
